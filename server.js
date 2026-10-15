@@ -18,7 +18,7 @@ http.createServer((req, res) => {
   let pathname;
   try { pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname); }
   catch { res.writeHead(400).end(); return; }
-  const file = pages.get(pathname) || pathname.replace(/^\\//, "");
+  const file = pages.get(pathname) || pathname.slice(1);
   const target = path.resolve(root, file);
   if (!target.startsWith(root + path.sep) || !fs.existsSync(target) || !fs.statSync(target).isFile()) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }).end("Página não encontrada");
