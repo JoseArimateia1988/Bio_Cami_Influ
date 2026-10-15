@@ -6,6 +6,11 @@
 .hero:after{content:"";position:absolute;right:3%;bottom:-48px;width:200px;height:190px;background:url("camila-branch.webp") center/contain no-repeat;mix-blend-mode:multiply;opacity:.34;pointer-events:none;z-index:-1}
 .notice{background-image:linear-gradient(#ffffffe0,#ffffffe0),url("camila-pattern.webp");background-size:auto,350px 175px}
 @media(max-width:700px){.hero:after{width:115px;height:140px;right:0;opacity:.2}}
+
+/* Estampa do mídia kit em baixa intensidade atrás dos produtos. */
+body{background-color:#f9f4f0;background-image:linear-gradient(#f9f4f0df,#f9f4f0df),url("camila-pattern.webp");background-size:auto,680px 340px;background-repeat:repeat}
+.hero:after{opacity:.5}
+@media(max-width:700px){body{background-size:auto,480px 240px}.hero:after{opacity:.28}}
 </style></head><body><div class="top">Garimpos escolhidos pela Camila</div><header class="head wrap"><a class="brand" href="index.html">camila gatelli</a><a class="back" href="index.html">Voltar à home</a></header><main class="wrap"><section class="hero"><span class="eyebrow">Curadoria do post</span><h1 id="title"></h1><p id="intro"></p></section><div class="bar"><span id="count" class="count"></span><input class="search" id="search" type="search" placeholder="Buscar nesta curadoria…" aria-label="Buscar produtos nesta curadoria"></div><div class="notice">Demonstração do formato para curadorias grandes: fotos e produtos desta página são ilustrativos. Os links reais entram quando a seleção da Camila for cadastrada.</div><div class="grid" id="grid"></div><p id="empty" class="empty" hidden>Nenhum produto encontrado nesta seleção.</p><button id="load" class="load" type="button" hidden>Carregar mais produtos</button></main><footer class="foot"><a href="index.html">Início</a> · <a href="midia-kit.html">Mídia kit</a> · <a href="https://www.instagram.com/cami.gatelli/" target="_blank" rel="noopener">Instagram</a></footer><dialog id="info"><p>Esta é uma amostra do layout. Na versão conectada ao Edit, cada produto abre o link de compra cadastrado pela Camila.</p><button id="close" type="button">Entendi</button></dialog><script>
 const params=new URLSearchParams(location.search),key=params.get('tema')||'criancas';
 const topics={
